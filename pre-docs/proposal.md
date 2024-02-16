@@ -53,6 +53,11 @@ This project aims to construct a scalable and efficient enterprise-level applica
 - Testing, optimization, and documentation: Weeks 13-15.
 - User Acceptance Testing (UAT) and deployment: Weeks 16-17.
 
+## User Case 
+![Microservices Architecture Diagram](images/user-case-java-microservices.png)
+--- MVC
+![MVC](images/MVC.png)
+
 ## Budget Estimate
 
 [Detailed budget will be provided following further requirements analysis and resource planning.]
