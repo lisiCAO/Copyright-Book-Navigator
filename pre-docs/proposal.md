@@ -57,6 +57,9 @@ This project aims to construct a scalable and efficient enterprise-level applica
 ![Microservices Architecture Diagram](images/user-case-java-microservices.png)
 --- MVC
 ![MVC](images/MVC.png)
+![InterProcessCommunication](https://github.com/lisiCAO/Copyright-Book-Navigator/assets/137085653/33fc0963-f5ec-4775-8040-ee747c90a7d4)
+
+
 
 ## Budget Estimate
 
