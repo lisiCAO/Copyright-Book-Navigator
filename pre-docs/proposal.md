@@ -55,7 +55,7 @@ This project aims to construct a scalable and efficient enterprise-level applica
 
 ## User Case 
 ![Microservices Architecture Diagram](images/user-case-java-microservices.png)
---- MVC
+- MVC
 ![MVC](images/MVC.png)
 ![InterProcessCommunication](https://github.com/lisiCAO/Copyright-Book-Navigator/assets/137085653/33fc0963-f5ec-4775-8040-ee747c90a7d4)
 
@@ -66,4 +66,7 @@ This project aims to construct a scalable and efficient enterprise-level applica
 [Detailed budget will be provided following further requirements analysis and resource planning.]
 ---
 
-As for the subsequent adjustment towards a copyright book navigator for guiding the retrieval and use of books without providing the original text, this would require significant changes to the functionalities outlined in this proposal. The focus would shift towards developing services for metadata handling, search indexing, and possibly integration with external book databases or APIs.
+## Further development
+- As for the subsequent adjustment towards a copyright book navigator for guiding the retrieval and use of books without providing the original text, this would require significant changes to the functionalities outlined in this proposal. 
+- The focus would shift towards developing services for metadata handling, search indexing, and possibly integration with external book databases or APIs.
+
