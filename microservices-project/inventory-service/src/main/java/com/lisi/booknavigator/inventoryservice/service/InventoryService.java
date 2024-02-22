@@ -1,7 +1,7 @@
 package com.lisi.booknavigator.inventoryservice.service;
 
 import com.lisi.booknavigator.inventoryservice.repository.InventoryRepository;
-import dto.InventoryResponse;
+import com.lisi.booknavigator.inventoryservice.dto.InventoryResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

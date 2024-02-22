@@ -1,4 +1,4 @@
-package dto;
+package com.lisi.booknavigator.inventoryservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
