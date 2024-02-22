@@ -1,1 +1,1 @@
-[Proposal](pre-docs/proposal.md)
+This project is still in process.
