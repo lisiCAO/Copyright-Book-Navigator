@@ -10,17 +10,15 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @Configuration
 @EnableWebFluxSecurity
 public class SecurityConfig {
-    @Bean
-    public SecurityWebFilterChain sprpingSecurityFilterChain(ServerHttpSecurity serverHttpSecurity){
 
-        ServerHttpSecurity
-                .csrf().disable()
-                .authorizeExchange(exchange -> exchange
-                        .pathMatchers("/eureka/**")
-                        .permitAll()
-                        .anyExchange()
-                        .authenticated())
-                .oauth2ResourceServer(ServerHttpSecurity.OAuth2ResourceServerSpec::jwt);
+    @Bean
+    public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
+        serverHttpSecurity.csrf(ServerHttpSecurity.CsrfSpec::disable)
+                .authorizeExchange(exchanges -> exchanges
+                        .pathMatchers("/eureka/**").permitAll() // allow Eureka call without condition
+                        .anyExchange().authenticated()) // all others should be authenticated
+                .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults())); // use Default explicitly 6.1
+
         return serverHttpSecurity.build();
     }
 }
