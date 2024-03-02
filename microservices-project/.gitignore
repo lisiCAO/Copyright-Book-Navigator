@@ -36,3 +36,9 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# PostgreSQL data directories
+microservices-project/postgres-order/*
+microservices-project/postgres-inventory/*
+microservices-project/mongo-data/*
+microservices-project/mysql_keycloak_data
