@@ -80,16 +80,6 @@
                             <image>eclipse-temurin:21.0.1_12-jre</image>
                         </from>
                     <to><image>registry.hub.docker.com/lisicao/${project.artifactId}</image></to>
-                    <platforms>
-                        <platform>
-                            <architecture>amd64</architecture>
-                            <os>linux</os>
-                        </platform>
-                        <platform>
-                            <architecture>arm64</architecture>
-                            <os>linux</os>
-                        </platform>
-                    </platforms>
                 </configuration>
             </plugin>
         </plugins>
