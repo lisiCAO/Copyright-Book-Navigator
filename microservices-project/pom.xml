@@ -29,6 +29,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-cloud.version>2023.0.0</spring-cloud.version>
+        <spring-boot.version>3.2.2</spring-boot.version>
     </properties>
 
     <dependencyManagement>
@@ -44,6 +45,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -77,20 +85,16 @@
                 <version>3.2.1</version>
                 <configuration>
                     <from>
-                        <image>eclipse-temurin:latest</image>
+                        <image>eclipse-temurin:latest@sha256:b1a93e74b7ebce1735d119a45ea17b3cddddfd115a820cde8422b0597e1b5bc9</image>
                         <platforms>
                             <platform>
                                 <architecture>arm64</architecture>
                                 <os>linux</os>
                             </platform>
-                            <platform>
-                                <architecture>amd64</architecture>
-                                <os>linux</os>
-                            </platform>
                         </platforms>
                     </from>
                     <to>
-                        <image>registry.hub.docker.com/lisicao/${project.artifactId}</image>
+                        <image>docker.io/lisicao/${project.artifactId}</image>
                     </to>
                 </configuration>
             </plugin>
