@@ -22,6 +22,7 @@
         <module>discovery-server</module>
         <module>api-gateway</module>
         <module>notification-service</module>
+        <module>search-service</module>
     </modules>
 
     <properties>
@@ -30,6 +31,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-cloud.version>2023.0.0</spring-cloud.version>
         <spring-boot.version>3.2.2</spring-boot.version>
+        <spring-ai.version>0.8.0</spring-ai.version>
     </properties>
 
     <dependencyManagement>
@@ -59,6 +61,13 @@
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-tracing-bom</artifactId>
                 <version>${micrometer-tracing.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -100,4 +109,16 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 </project>
