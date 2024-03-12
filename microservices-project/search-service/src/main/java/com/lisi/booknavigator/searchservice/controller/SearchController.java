@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/api/search")
 public class SearchController {
 
     private final SearchService searchService;
@@ -21,7 +23,7 @@ public class SearchController {
     public SearchController(SearchService searchService){
         this.searchService = searchService;
     }
-    @GetMapping("/search")
+    @GetMapping
     public ResponseEntity<?> search(@RequestParam @NotBlank String query){
         List<Product> results = searchService.performSearch(query);
         List<SearchResponse> responses = results.stream()

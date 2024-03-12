@@ -15,7 +15,7 @@ public class ProductEventHandler {
         this.elasticsearchService = elasticsearchService;
     }
 
-    @KafkaListener(topics = "product-changes", groupId = "search-service-group")
+    @KafkaListener(topics = "productsTopic", groupId = "search-service-group")
     public void listenProductChanges(ProductEvent event) {
         // 根据事件类型进行处理
         switch (event.getEventType()) {

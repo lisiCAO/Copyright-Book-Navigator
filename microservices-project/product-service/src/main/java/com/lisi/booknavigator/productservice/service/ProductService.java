@@ -34,7 +34,7 @@ public class ProductService {
         Product savedProduct = productRepository.save(product);
 
         ProductEvent event = new ProductEvent(savedProduct.getId(), ProductEvent.EventType.CREATE, savedProduct);
-        kafkaTemplate.send("productTopic",event);
+        kafkaTemplate.send("productsTopic",event);
 
         log.info("Product {} is saved", product.getId());
     }

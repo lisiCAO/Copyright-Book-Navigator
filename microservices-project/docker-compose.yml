@@ -219,7 +219,6 @@ services:
     pull_policy: always
     environment:
       - SPRING_PROFILES_ACTIVE=docker
-
     depends_on:
       - elasticsearch
       - product-service
@@ -243,7 +242,6 @@ services:
       - api-gateway
     networks:
       - microservices-network
-
 
 ## Prometheus
   prometheus:
@@ -281,15 +279,12 @@ services:
   elasticsearch:
     image: elasticsearch:8.12.2
     container_name: elasticsearch
+    restart: always
     ports:
       - 9200:9200
-      - 9300:9300
-    depends_on:
-      - discovery-server
-      - notification-service
-      - product-service
     environment:
       - xpack.security.enabled=false
+      - discovery.type=single-node
     networks:
       - microservices-network
 
@@ -299,5 +294,7 @@ services:
     restart: unless-stopped
     ports:
       - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
     networks:
       - microservices-network

@@ -19,7 +19,7 @@ public class NotificationServiceApplication {
         log.info("Received Notification for Order {}", orderPlacedEvent.getOrderNumber());
     }
 
-    @KafkaListener(topics = "productsTopic")
+    @KafkaListener(topics = "productsTopic", groupId = "search-service-group")
     public void handleProductEvent(ProductEvent event) {
         switch (event.getEventType()) {
             case CREATE:
@@ -39,5 +39,4 @@ public class NotificationServiceApplication {
     private void sendDeleteNotification(String productId) {
         // TODO: delete logic
     }
-
 }
