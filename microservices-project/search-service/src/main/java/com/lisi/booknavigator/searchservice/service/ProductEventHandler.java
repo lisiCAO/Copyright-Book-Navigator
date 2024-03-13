@@ -17,7 +17,6 @@ public class ProductEventHandler {
 
     @KafkaListener(topics = "productsTopic", groupId = "search-service-group")
     public void listenProductChanges(ProductEvent event) {
-        // 根据事件类型进行处理
         switch (event.getEventType()) {
             case CREATE:
             case UPDATE:

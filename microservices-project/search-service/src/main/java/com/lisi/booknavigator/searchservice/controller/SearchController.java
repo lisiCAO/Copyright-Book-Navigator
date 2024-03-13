@@ -4,7 +4,7 @@ import com.lisi.booknavigator.searchservice.Dto.SearchResponse;
 import com.lisi.booknavigator.searchservice.entity.Product;
 import com.lisi.booknavigator.searchservice.service.SearchService;
 import jakarta.validation.constraints.NotBlank;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,14 +15,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/search")
 public class SearchController {
 
     private final SearchService searchService;
 
-    public SearchController(SearchService searchService){
-        this.searchService = searchService;
-    }
     @GetMapping
     public ResponseEntity<?> search(@RequestParam @NotBlank String query){
         List<Product> results = searchService.performSearch(query);

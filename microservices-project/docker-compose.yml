@@ -281,7 +281,7 @@ services:
     container_name: elasticsearch
     restart: always
     ports:
-      - 9200:9200
+      - "9200:9200"
     environment:
       - xpack.security.enabled=false
       - discovery.type=single-node
