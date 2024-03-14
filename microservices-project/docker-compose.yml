@@ -52,7 +52,6 @@ services:
     networks:
       - microservices-network
 
-  ## Keycloak Config with Mysql database
   keycloak-mysql:
     container_name: keycloak-mysql
     image: mysql:8.3
@@ -118,7 +117,6 @@ services:
     networks:
       - microservices-network
 
-  ## Zipkin
   zipkin:
     image: openzipkin/zipkin
     container_name: zipkin
@@ -127,7 +125,6 @@ services:
     networks:
       - microservices-network
 
-  ## Eureka Server
   discovery-server:
     platform: linux/arm64
     image: lisicao/discovery-server:latest
@@ -161,7 +158,6 @@ services:
     networks:
       - microservices-network
 
-  ## Product-Service Docker Compose Config
   product-service:
     platform: linux/arm64
     container_name: product-service
@@ -177,7 +173,6 @@ services:
     networks:
       - microservices-network
 
-  ## Order-Service Docker Compose Config
   order-service:
     platform: linux/arm64
     container_name: order-service
@@ -195,7 +190,6 @@ services:
     networks:
       - microservices-network
 
-  ## Inventory-Service Docker Compose Config
   inventory-service:
     platform: linux/arm64
     container_name: inventory-service
@@ -211,7 +205,6 @@ services:
     networks:
       - microservices-network
 
-  ## Search-Service Docker Compose Config
   search-service:
     platform: linux/arm64
     container_name: search-service
@@ -227,7 +220,6 @@ services:
     networks:
       - microservices-network
 
-  ## Notification-Service Docker Compose Config
   notification-service:
     platform: linux/arm64
     container_name: notification-service
@@ -243,7 +235,6 @@ services:
     networks:
       - microservices-network
 
-## Prometheus
   prometheus:
     image: prom/prometheus-linux-arm64
     container_name: prometheus
