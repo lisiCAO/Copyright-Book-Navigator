@@ -42,8 +42,11 @@ microservices-project/postgres-order/
 microservices-project/postgres-inventory/
 microservices-project/mongo-data/
 microservices-project/mysql_keycloak_data/
+microservices-project/elasticsearch-data/
 /postgres-inventory/
 /postgres-order/
 /mongo-data/
 /mysql_keycloak_data/
 /grafana/
+/elasticsearch-data/
+
