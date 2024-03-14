@@ -211,6 +211,22 @@ services:
     networks:
       - microservices-network
 
+  ## Search-Service Docker Compose Config
+  search-service:
+    platform: linux/arm64
+    container_name: search-service
+    image: lisicao/search-service:latest
+    pull_policy: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - elasticsearch
+      - product-service
+      - discovery-server
+      - api-gateway
+    networks:
+      - microservices-network
+
   ## Notification-Service Docker Compose Config
   notification-service:
     platform: linux/arm64
@@ -226,7 +242,6 @@ services:
       - api-gateway
     networks:
       - microservices-network
-
 
 ## Prometheus
   prometheus:
@@ -258,5 +273,28 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=password
+    networks:
+      - microservices-network
+
+  elasticsearch:
+    image: elasticsearch:8.12.2
+    container_name: elasticsearch
+    restart: always
+    ports:
+      - "9200:9200"
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+    networks:
+      - microservices-network
+
+  kibana:
+    image: kibana:8.12.2
+    container_name: kibana
+    restart: unless-stopped
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
     networks:
       - microservices-network

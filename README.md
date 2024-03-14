@@ -87,6 +87,9 @@ Next, I'll create a flowchart to show how these services interact and cooperate 
 
 ![distribute-tracing-logs](https://github.com/lisiCAO/Copyright-Book-Navigator/assets/137085653/bce4bb8f-1f8e-4cce-9b5f-6fe3e8b1bcdd)
 
+<img width="2239" alt="kibana" src="https://github.com/lisiCAO/Copyright-Book-Navigator/assets/137085653/c113acf6-5d04-4b72-9e37-c57c4625e593">
+
 <img width="851" alt="postman-place-order" src="https://github.com/lisiCAO/Copyright-Book-Navigator/assets/137085653/90d55612-032a-437b-b867-3705ef763cd1">
 
 <img width="851" alt="postman-get-prodcuts" src="https://github.com/lisiCAO/Copyright-Book-Navigator/assets/137085653/ff114104-1ab0-44af-95ea-5c1727462b13">
+<img width="1271" alt="postman-search" src="https://github.com/lisiCAO/Copyright-Book-Navigator/assets/137085653/14db8599-8599-4e82-9318-b34c896789bd">
